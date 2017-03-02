@@ -163,7 +163,6 @@ class Naver_DN(webdriver.Firefox, webdriver.Chrome, webdriver.Ie):
     def _get_b_titles(self):
         return [ re.sub('\[[0-9]*\]', '', i.text).strip()  for i in self.find_elements(By.XPATH, ".//td/span/span[@class='aaa']")]
 
-
     def _get_b_numbers(self):
         return [i.text for i in self.find_elements(By.XPATH, "//form[@name='ArticleList']/table[@class='board-box']/tbody/tr[@align='center']/td[1]/span")]
 
@@ -184,6 +183,28 @@ class Naver_DN(webdriver.Firefox, webdriver.Chrome, webdriver.Ie):
 
     def _goTo_nextPage(self):
         self.find_element(By.XPATH, "//table[@class='Nnavi']/tbody/tr/td[@class='on']/following-sibling::td/a").click()
+
+    def get_youtube_links(self, _title):
+        
+        if self.__check_exists_by_xpath__("//iframe[starts-with(@src,'https://www.youtube')]"):
+            _url_youtube = self.find_element(By.XPATH, "//iframe[starts-with(@src,'https://www.youtube')]").get_attribute('src')
+            print("Youtube :{0}".format(_url_youtube))
+            try:
+                _url_head = "<iframe src=\""
+                _url_tail = "\" scrolling=\"no\"  width=\"640px\" height=\"360px\" frameborder=\"0\"></iframe>"
+                with open(_title, 'w') as f:
+                    f.write(_url_head)
+                    f.write(_url_youtube)
+                    f.write(_url_tail)
+                    
+            except Exception as ex:
+                print(ex.message)
+
+            
+                
+        else:
+            print("No YOUTUBE LINKS")
+            
         
 
 
@@ -374,11 +395,12 @@ if __name__ == '__main__':
 #             time.sleep(2)
 #             na = Naver_DN('Firefox', cnf_jsn)
 #             na.get(cafe_url)
-#             na.log_pin(na.log_ID, na.log_pw)
+#             na.log_in(na.log_ID, na.log_pw)
 #             na.get(cafe_url+i[0])
 #             time.sleep(3)
 #             try:
 #                 na.download_files(title)
+#                 na.get_youtube_links(title)
 #             except:
 #                 pass
 
