@@ -253,3 +253,67 @@ JavaScript warning: http://cafe.naver.com/static/js/mycafe/common/storyphoto/ori
 JavaScript warning: http://cafe.naver.com/static/js/mycafe/common/storyphoto/original_viewer-1476780396000-41944.js, line 134: unreachable code after return statement
 JavaScript warning: http://cafe.naver.com/static/js/mycafe/common/storyphoto/original_viewer-1476780396000-41944.js, line 89: unreachable code after return statement
 JavaScript warning: http://cafe.naver.com/static/js/mycafe/common/storyphoto/original_viewer-1476780396000-41944.js, line 134: unreachable code after return statement
+JavaScript warning: http://cafe.naver.com/static/js/mycafe/common/storyphoto/original_viewer-1476780396000-41944.js, line 89: unreachable code after return statement
+JavaScript warning: http://cafe.naver.com/static/js/mycafe/common/storyphoto/original_viewer-1476780396000-41944.js, line 134: unreachable code after return statement
+1488463401776	geckodriver	INFO	Listening on 127.0.0.1:37531
+1488463402775	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.HpUdAC4OJC0r
+1488463402776	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1488463402778	geckodriver::marionette	INFO	Connecting to Marionette on localhost:42228
+1488463403486	Marionette	INFO	Listening on port 42228
+1488463405101	Marionette	WARN	Using deprecated data structure for setting timeouts
+JavaScript warning: http://cafe.naver.com/static/js/mycafe/common/storyphoto/original_viewer-1476780396000-41944.js, line 89: unreachable code after return statement
+JavaScript warning: http://cafe.naver.com/static/js/mycafe/common/storyphoto/original_viewer-1476780396000-41944.js, line 134: unreachable code after return statement
+JavaScript warning: http://cafe.naver.com/static/js/mycafe/common/storyphoto/original_viewer-1476780396000-41944.js, line 89: unreachable code after return statement
+JavaScript warning: http://cafe.naver.com/static/js/mycafe/common/storyphoto/original_viewer-1476780396000-41944.js, line 134: unreachable code after return statement
+
+(firefox:27748): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:27748): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:27748): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:27748): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:27748): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:27748): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:27748): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+JavaScript warning: http://cafe.naver.com/static/js/mycafe/common/storyphoto/original_viewer-1476780396000-41944.js, line 89: unreachable code after return statement
+JavaScript warning: http://cafe.naver.com/static/js/mycafe/common/storyphoto/original_viewer-1476780396000-41944.js, line 134: unreachable code after return statement
+JavaScript warning: http://cafe.naver.com/static/js/mycafe/common/storyphoto/original_viewer-1476780396000-41944.js, line 89: unreachable code after return statement
+JavaScript warning: http://cafe.naver.com/static/js/mycafe/common/storyphoto/original_viewer-1476780396000-41944.js, line 134: unreachable code after return statement
+1488463443794	geckodriver	INFO	Listening on 127.0.0.1:39527
+1488463444794	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.BUEE41dCoXmw
+1488463444797	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1488463444802	geckodriver::marionette	INFO	Connecting to Marionette on localhost:33335
+1488463445507	Marionette	INFO	Listening on port 33335
+1488463447153	Marionette	WARN	Using deprecated data structure for setting timeouts
+JavaScript warning: http://cafe.naver.com/static/js/mycafe/common/storyphoto/original_viewer-1476780396000-41944.js, line 89: unreachable code after return statement
+JavaScript warning: http://cafe.naver.com/static/js/mycafe/common/storyphoto/original_viewer-1476780396000-41944.js, line 134: unreachable code after return statement
+JavaScript warning: http://cafe.naver.com/static/js/mycafe/common/storyphoto/original_viewer-1476780396000-41944.js, line 89: unreachable code after return statement
+JavaScript warning: http://cafe.naver.com/static/js/mycafe/common/storyphoto/original_viewer-1476780396000-41944.js, line 134: unreachable code after return statement
+
+(firefox:27884): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:27884): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:27884): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:27884): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:27884): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:27884): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+
+(firefox:27884): GLib-GObject-CRITICAL **: g_type_add_interface_static: assertion 'g_type_parent (interface_type) == G_TYPE_INTERFACE' failed
+JavaScript warning: http://cafe.naver.com/static/js/mycafe/common/storyphoto/original_viewer-1476780396000-41944.js, line 89: unreachable code after return statement
+JavaScript warning: http://cafe.naver.com/static/js/mycafe/common/storyphoto/original_viewer-1476780396000-41944.js, line 134: unreachable code after return statement
+JavaScript warning: http://cafe.naver.com/static/js/mycafe/common/storyphoto/original_viewer-1476780396000-41944.js, line 89: unreachable code after return statement
+JavaScript warning: http://cafe.naver.com/static/js/mycafe/common/storyphoto/original_viewer-1476780396000-41944.js, line 134: unreachable code after return statement
+JavaScript warning: http://cafe.naver.com/static/js/mycafe/common/storyphoto/original_viewer-1476780396000-41944.js, line 89: unreachable code after return statement
+JavaScript warning: http://cafe.naver.com/static/js/mycafe/common/storyphoto/original_viewer-1476780396000-41944.js, line 134: unreachable code after return statement
+JavaScript warning: http://cafe.naver.com/static/js/mycafe/common/storyphoto/original_viewer-1476780396000-41944.js, line 89: unreachable code after return statement
+JavaScript warning: http://cafe.naver.com/static/js/mycafe/common/storyphoto/original_viewer-1476780396000-41944.js, line 134: unreachable code after return statement
+[Child 27951] ###!!! ABORT: Aborting on channel error.: file /build/firefox-z5GTBX/firefox-51.0.1+build2/ipc/glue/MessageChannel.cpp, line 2056
+[Child 27951] ###!!! ABORT: Aborting on channel error.: file /build/firefox-z5GTBX/firefox-51.0.1+build2/ipc/glue/MessageChannel.cpp, line 2056
