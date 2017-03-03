@@ -57,7 +57,7 @@ class Naver_DN(webdriver.Firefox, webdriver.Chrome, webdriver.Ie):
 
     def __del__(self):
         logging.warning(" CLASS OJBECT KILLED")
-        os.system('pkill -f firefox')
+        #os.system('pkill -f firefox')
 
     def __switch_to_iFrame__(self, _iframe_id):
 
@@ -131,7 +131,7 @@ class Naver_DN(webdriver.Firefox, webdriver.Chrome, webdriver.Ie):
 
 
         self.find_element_by_xpath("//a[@id = 'gnb_login_button']").click()
-        time.sleep(3)
+        time.sleep(1)
         self.find_element_by_xpath("//input[@id='id']").send_keys(_id)
         _a= self.find_element_by_xpath("//input[@id='pw']")
         _a.send_keys(_pw)
@@ -185,18 +185,17 @@ class Naver_DN(webdriver.Firefox, webdriver.Chrome, webdriver.Ie):
         self.find_element(By.XPATH, "//table[@class='Nnavi']/tbody/tr/td[@class='on']/following-sibling::td/a").click()
 
     def get_youtube_links(self, _title):
-        
+        self.__switch_to_iFrame__('cafe_main')
         if self.__check_exists_by_xpath__("//iframe[starts-with(@src,'https://www.youtube')]"):
             _url_youtube = self.find_element(By.XPATH, "//iframe[starts-with(@src,'https://www.youtube')]").get_attribute('src')
             print("Youtube :{0}".format(_url_youtube))
             try:
                 _url_head = "<iframe src=\""
                 _url_tail = "\" scrolling=\"no\"  width=\"640px\" height=\"360px\" frameborder=\"0\"></iframe>"
-                with open(_title, 'w') as f:
+                with open(_title+".html", 'w') as f:
                     f.write(_url_head)
                     f.write(_url_youtube)
                     f.write(_url_tail)
-                    
             except Exception as ex:
                 print(ex.message)
 
@@ -234,12 +233,16 @@ class Naver_DN(webdriver.Firefox, webdriver.Chrome, webdriver.Ie):
 
         self.__switch_to_iFrame__('cafe_main')        
 
-        while(self.__check_exists_by_xpath__(_txt_dn_arrow) is False):
-            na.refresh()
-            while( self.__check_exists_by_xpath__(_txt_cafe_main) is True):
-                self.__switch_to_iFrame__('cafe_main')
-                logging.info("***** Switched to cafe_main")
-            
+        # while(self.__check_exists_by_xpath__(_txt_dn_arrow) is False):
+        #     na.refresh()
+        #     while( self.__check_exists_by_xpath__(_txt_cafe_main) is True):
+        #         self.__switch_to_iFrame__('cafe_main')
+        #         logging.info("***** Switched to cafe_main")
+
+        while( self.__check_exists_by_xpath__(_txt_cafe_main) is True):
+            self.__switch_to_iFrame__('cafe_main')
+            logging.info("***** Switched to cafe_main")
+
         print("dn_arrow Founded")
         _dn_box = self.find_element(By.XPATH, _txt_dn_arrow)
         _dn_box.click()
@@ -337,7 +340,8 @@ class Naver_DN(webdriver.Firefox, webdriver.Chrome, webdriver.Ie):
 
         
 def read_json(f_name):
-    with open(f_name, 'r') as f:        cnf_jsn = json.load(f)
+    with open(f_name, 'r') as f:
+        cnf_jsn = json.load(f)
     return cnf_jsn
 
 
@@ -360,9 +364,11 @@ def time_limit(seconds):
         
 
 if __name__ == '__main__':
+    BROWSER = "PhantomJS"
+    
     logging.basicConfig(level=logging.INFO)
     cnf_jsn = read_json('config.json')
-    na = Naver_DN('Firefox', cnf_jsn)
+    na = Naver_DN(BROWSER, cnf_jsn)
     cafe_url = 'http://cafe.naver.com/violin79/'
     na.get('https://nid.naver.com/nidlogin.login')
     na.get(na.base_URL+ na.cafe_name)
@@ -377,40 +383,46 @@ if __name__ == '__main__':
     b_num_title = [x for x in  na.make_b_data_lst()]
     time.sleep(1)
     
-#     for n,i in enumerate(b_num_title):
-#         number,title, addr = i
-#         print("go To bulletin body")
-#         print("========== {0} :{1}".format(n, i[1]))
+    for n,i in enumerate(b_num_title):
+        number,title, addr = i
+        print("go To bulletin body")
+        print("========== {0} :{1}".format(n, i[1]))
 
-#         # na.get with the running time limitation
-#         try:
-#             with time_limit(5):
-#                 time.sleep(2)
-#                 na.get(cafe_url+i[0])
-#         except TimeoutException:
-#             logging.critical('Firefox crushed')
-#             print("{0} xxxxxxxxxxxxxxxxxxxxTimed out!xxxxxxxxxx".format(cafe_url+i[0]))
-#             na.__del__()
-# #            os.system('pkill -f firefox')
-#             time.sleep(2)
-#             na = Naver_DN('Firefox', cnf_jsn)
-#             na.get(cafe_url)
-#             na.log_in(na.log_ID, na.log_pw)
-#             na.get(cafe_url+i[0])
-#             time.sleep(3)
-#             try:
-#                 na.download_files(title)
-#                 na.get_youtube_links(title)
-#             except:
-#                 pass
+        # na.get with the running time limitation
+        try:
+            with time_limit(5):
+                time.sleep(1)
+                na.get(cafe_url+i[0])
+                
+        except TimeoutException:
+            logging.critical(BROWSER +'crushed')
+            print("{0} xxxxxxxxxxxxxxxxxxxxTimed out!xxxxxxxxxx".format(cafe_url+i[0]))
+            del na
+#            os.system('pkill -f firefox')
+            time.sleep(2)
+            na = Naver_DN(BROWSER, cnf_jsn)
+            na.get(cafe_url)
+            na.log_in(na.log_ID, na.log_pw)
+            na.get(cafe_url+i[0])
+            time.sleep(2)
 
-#             continue
+            try:
+                na.download_files(title)
+
+            except:
+                pass
+
+            continue
         
-#         print("STARTS DOWNLOADFILE")
-#         try:
-#             na.download_files(title)
-#         except:
-#             continue
+        print("STARTS DOWNLOADFILE")
+        try:
+
+            na.download_files(title)
+            os.chdir('./'+title)            
+            na.get_youtube_links(title)
+            os.chdir('../')
+        except:
+            continue
         
                 
     
