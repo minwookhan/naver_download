@@ -1,0 +1,58 @@
+
+
+menu:
+'div#group-area.fl>div#cafe-menu>div.box-g-m>ul>li>a#menuLink29'
+menu Tree Structure
+*html
+** body
+*** div#cafe-body-skin
+**** 'div#cafe-body'
+***** div#content-area
+****** div#group-area.fl
+******* 'div#cafe-menu'
+******** 'div.box-g-m'
+********* ul#group20.cafe-menu-list
+*********** li
+************* a#menuLink29  ----> "MENUE"
+
+
+body bulletin Tree
+
+* html
+
+** body
+
+*** div#cafe-body-skin
+
+**** div#caf-body
+
+***** div#content-area
+
+****** div#main-area.fr
+
+******* iframe#cafe_main
+
+******** html
+********* body
+
+********** div#content-area
+
+*********** div#main-area.fl
+
+************ div.article-board.m-tcol-c
+
+************* form
+
+************** table.board-box
+
+*************** tbody
+
+**************** tr
+
+***************** td
+
+****************** span .text ----> "article_number"
+
+***************** td
+                  
+****************** span.text = title
